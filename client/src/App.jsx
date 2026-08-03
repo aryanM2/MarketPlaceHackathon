@@ -8,6 +8,7 @@ import BuyerOnboarding from './pages/BuyerOnboarding';
 import SupplierOnboarding from './pages/SupplierOnboarding';
 import Marketplace from './pages/Marketplace';
 import ProductDetails from './pages/ProductDetails';
+import Cart from './pages/Cart';
 
 
 
@@ -48,6 +49,7 @@ function App() {
               <Route element={<ProtectedRoute allowedRoles={['buyer']} />}>
                 <Route path="/buyer/dashboard" element={<BuyerDashboardPlaceholder />} />
                 <Route path="/buyer/onboarding" element={<BuyerOnboarding />} />
+                <Route path="/cart" element={<Cart />} />
               </Route>
 
               {/* Protected Supplier Routes */}
