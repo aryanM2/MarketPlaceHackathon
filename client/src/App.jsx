@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ProtectedRoute from './components/ProtectedRoute';
+import BuyerOnboarding from './pages/BuyerOnboarding';
 
 // Home / Marketplace Placeholder Component
 const MarketplaceHome = () => {
@@ -65,6 +66,7 @@ function App() {
               {/* Protected Buyer Routes */}
               <Route element={<ProtectedRoute allowedRoles={['buyer']} />}>
                 <Route path="/buyer/dashboard" element={<BuyerDashboardPlaceholder />} />
+                <Route path="/buyer/onboarding" element={<BuyerOnboarding />} />
               </Route>
 
               {/* Protected Supplier Routes */}
