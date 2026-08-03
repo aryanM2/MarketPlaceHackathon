@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import ProtectedRoute from './components/ProtectedRoute';
 import BuyerOnboarding from './pages/BuyerOnboarding';
+import SupplierOnboarding from './pages/SupplierOnboarding';
 
 // Home / Marketplace Placeholder Component
 const MarketplaceHome = () => {
@@ -72,6 +73,7 @@ function App() {
               {/* Protected Supplier Routes */}
               <Route element={<ProtectedRoute allowedRoles={['supplier']} />}>
                 <Route path="/supplier/dashboard" element={<SupplierDashboardPlaceholder />} />
+                <Route path="/supplier/onboarding" element={<SupplierOnboarding />} />
               </Route>
 
               {/* Catch-all redirect to home */}
