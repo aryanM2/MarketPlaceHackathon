@@ -4,6 +4,7 @@ const {
   getProducts,
   getFeaturedProducts,
   getProductById,
+  getSupplierProducts,
   createProduct,
   updateProduct,
   deleteProduct,
@@ -12,6 +13,7 @@ const { protect, authorize } = require('../middleware/authMiddleware');
 
 router.get('/', getProducts);
 router.get('/featured', getFeaturedProducts);
+router.get('/mine', protect, authorize('supplier'), getSupplierProducts);
 router.get('/:id', getProductById);
 
 // Protected Supplier Routes

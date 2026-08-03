@@ -246,10 +246,33 @@ const deleteProduct = async (req, res) => {
   }
 };
 
+// @desc    Get logged in supplier products
+// @route   GET /api/products/mine
+// @access  Private (Supplier)
+const getSupplierProducts = async (req, res) => {
+  try {
+    await seedSampleProductsIfEmpty();
+
+    const products = await Product.find({ supplier: req.user._id }).sort({ createdAt: -1 });
+
+    return res.status(200).json({
+      success: true,
+      count: products.length,
+      data: products,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Server error',
+    });
+  }
+};
+
 module.exports = {
   getProducts,
   getFeaturedProducts,
   getProductById,
+  getSupplierProducts,
   createProduct,
   updateProduct,
   deleteProduct,

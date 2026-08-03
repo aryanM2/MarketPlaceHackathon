@@ -47,6 +47,25 @@ const Navbar = () => {
                   <span>Dashboard</span>
                 </Link>
 
+                {isSupplier && (
+                  <>
+                    <Link
+                      to="/supplier/orders"
+                      className="text-slate-600 hover:text-brand-600 font-medium text-sm flex items-center space-x-1 transition-colors"
+                    >
+                      <ShoppingBag className="w-4 h-4" />
+                      <span>Orders</span>
+                    </Link>
+                    <Link
+                      to="/supplier/inventory"
+                      className="text-slate-600 hover:text-brand-600 font-medium text-sm flex items-center space-x-1 transition-colors"
+                    >
+                      <Layers className="w-4 h-4" />
+                      <span>Inventory</span>
+                    </Link>
+                  </>
+                )}
+
                 <Link
                   to={isSupplier ? "/supplier/onboarding" : "/buyer/onboarding"}
                   className="text-slate-600 hover:text-brand-600 font-medium text-sm flex items-center space-x-1 transition-colors"

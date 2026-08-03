@@ -10,28 +10,18 @@ import Marketplace from './pages/Marketplace';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import BuyerDashboard from './pages/BuyerDashboard';
+import SupplierDashboard from './pages/SupplierDashboard';
+import InventoryManagement from './pages/InventoryManagement';
+import SupplierOrders from './pages/SupplierOrders';
+import SupplierProfileView from './pages/SupplierProfileView';
+import AIChatWidget from './components/AIChatWidget';
 
 
 
-// Buyer Dashboard Placeholder
-const BuyerDashboardPlaceholder = () => (
-  <div className="max-w-7xl mx-auto px-4 py-8">
-    <div className="bg-white p-8 rounded-xl shadow-md border border-slate-200">
-      <h2 className="text-xl font-bold text-slate-800">Buyer Dashboard</h2>
-      <p className="text-slate-500 text-sm mt-1">Welcome Buyer! (Module 9 will expand this dashboard)</p>
-    </div>
-  </div>
-);
 
-// Supplier Dashboard Placeholder
-const SupplierDashboardPlaceholder = () => (
-  <div className="max-w-7xl mx-auto px-4 py-8">
-    <div className="bg-white p-8 rounded-xl shadow-md border border-slate-200">
-      <h2 className="text-xl font-bold text-slate-800">Supplier Dashboard</h2>
-      <p className="text-slate-500 text-sm mt-1">Welcome Supplier! (Module 10 will expand this dashboard)</p>
-    </div>
-  </div>
-);
+
+
 
 function App() {
   return (
@@ -48,7 +38,7 @@ function App() {
 
               {/* Protected Buyer Routes */}
               <Route element={<ProtectedRoute allowedRoles={['buyer']} />}>
-                <Route path="/buyer/dashboard" element={<BuyerDashboardPlaceholder />} />
+                <Route path="/buyer/dashboard" element={<BuyerDashboard />} />
                 <Route path="/buyer/onboarding" element={<BuyerOnboarding />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout />} />
@@ -56,7 +46,10 @@ function App() {
 
               {/* Protected Supplier Routes */}
               <Route element={<ProtectedRoute allowedRoles={['supplier']} />}>
-                <Route path="/supplier/dashboard" element={<SupplierDashboardPlaceholder />} />
+                <Route path="/supplier/dashboard" element={<SupplierDashboard />} />
+                <Route path="/supplier/orders" element={<SupplierOrders />} />
+                <Route path="/supplier/inventory" element={<InventoryManagement />} />
+                <Route path="/supplier/profile" element={<SupplierProfileView />} />
                 <Route path="/supplier/onboarding" element={<SupplierOnboarding />} />
               </Route>
 
@@ -64,6 +57,7 @@ function App() {
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
+          <AIChatWidget />
         </div>
       </Router>
     </AuthProvider>
