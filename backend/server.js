@@ -21,6 +21,7 @@ app.use('/api/buyer', require('./routes/buyerRoutes'));
 app.use('/api/supplier', require('./routes/supplierRoutes'));
 app.use('/api/products', require('./routes/productRoutes'));
 app.use('/api/cart', require('./routes/cartRoutes'));
+app.use('/api/orders', require('./routes/orderRoutes'));
 
 // Basic Health Check Route
 app.get('/api/health', (req, res) => {

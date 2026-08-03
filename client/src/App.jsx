@@ -9,6 +9,7 @@ import SupplierOnboarding from './pages/SupplierOnboarding';
 import Marketplace from './pages/Marketplace';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 
 
 
@@ -50,6 +51,7 @@ function App() {
                 <Route path="/buyer/dashboard" element={<BuyerDashboardPlaceholder />} />
                 <Route path="/buyer/onboarding" element={<BuyerOnboarding />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout />} />
               </Route>
 
               {/* Protected Supplier Routes */}
