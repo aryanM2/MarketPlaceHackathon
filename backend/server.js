@@ -20,6 +20,7 @@ app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/buyer', require('./routes/buyerRoutes'));
 app.use('/api/supplier', require('./routes/supplierRoutes'));
 app.use('/api/products', require('./routes/productRoutes'));
+app.use('/api/cart', require('./routes/cartRoutes'));
 
 // Basic Health Check Route
 app.get('/api/health', (req, res) => {

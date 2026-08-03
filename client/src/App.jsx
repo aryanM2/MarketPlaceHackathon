@@ -7,6 +7,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import BuyerOnboarding from './pages/BuyerOnboarding';
 import SupplierOnboarding from './pages/SupplierOnboarding';
 import Marketplace from './pages/Marketplace';
+import ProductDetails from './pages/ProductDetails';
 
 
 
@@ -39,6 +40,7 @@ function App() {
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Marketplace />} />
+              <Route path="/products/:id" element={<ProductDetails />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
 
